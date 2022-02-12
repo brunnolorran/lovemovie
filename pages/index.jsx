@@ -1,14 +1,24 @@
-import Head from 'next/head'
-import { Container, Row, Card, Button } from 'react-bootstrap'
+import Head from "next/head";
+import { Container, Row, Card, Button, Navbar, Nav } from "react-bootstrap";
 
 export default function Home() {
   return (
-    <Container className="md-container">
+    <Container fluid>
       <Head>
         <title>ReactJS with react-bootstrap</title>
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <Container>
+      <Navbar bg="light" variant="light">
+        <Container fluid>
+          <Navbar.Brand href="#home">Lovemovie</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Container id="main-container">
         <h1>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -80,10 +90,10 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="sml-logo" />
         </a>
       </footer>
     </Container>
-  )
+  );
 }
